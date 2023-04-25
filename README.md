@@ -73,7 +73,7 @@ We are now at the last part of step by step guide on how to simulate STM32 proje
 ## STM 32 CUBE PROGRAM :
 created by:Naramala Niharika
 reg no : 212221240013
-
+```
 #include "main.h"
 
 void SystemClock_Config(void);
@@ -160,9 +160,9 @@ void assert_failed(uint8_t *file, uint32_t line)
 }
 #endif
 
-
-
+```
 ## Output screen shots of proteus  :
+
 ![Output](https://github.com/naramala-niharika/EXPERIMENT--03-SIMULATION-OF-PUSHBUTTON-AND-LED-WITH-PROTEUS-/blob/main/exp3-1.png?raw=true)
 ![Output](https://github.com/naramala-niharika/EXPERIMENT--03-SIMULATION-OF-PUSHBUTTON-AND-LED-WITH-PROTEUS-/blob/main/exp3-2.png?raw=true)
 
@@ -170,7 +170,7 @@ void assert_failed(uint8_t *file, uint32_t line)
 
 
 ## Proteus layout(Add pdf screen shot of circuit here)
-![Output](?raw=true)
+![Output](https://github.com/naramala-niharika/EXPERIMENT--03-SIMULATION-OF-PUSHBUTTON-AND-LED-WITH-PROTEUS-/blob/main/Screenshot%20(9).png?raw=true)
 
  
  
