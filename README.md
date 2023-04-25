@@ -165,8 +165,8 @@ reg no : 212222240013
 
 
 ## Output screen shots of proteus  :
-![Output](?raw=true)
-![Output](?raw=true)
+![Output](https://github.com/naramala-niharika/EXPERIMENT--03-SIMULATION-OF-PUSHBUTTON-AND-LED-WITH-PROTEUS-/blob/main/exp3-1.png?raw=true)
+![Output](https://github.com/naramala-niharika/EXPERIMENT--03-SIMULATION-OF-PUSHBUTTON-AND-LED-WITH-PROTEUS-/blob/main/exp3-2.png?raw=true)
 
 
 
