@@ -71,7 +71,9 @@ We are now at the last part of step by step guide on how to simulate STM32 proje
 
 
 ## STM 32 CUBE PROGRAM :
-```
+created by:Naramala Niharika
+reg no : 212221240013
+
 #include "main.h"
 
 void SystemClock_Config(void);
@@ -158,10 +160,6 @@ void assert_failed(uint8_t *file, uint32_t line)
 }
 #endif
 
-created by:Naramala Niharika
-reg no : 212222240013
-``
-
 
 
 ## Output screen shots of proteus  :
@@ -172,7 +170,8 @@ reg no : 212222240013
 
 
 ## Proteus layout(Add pdf screen shot of circuit here)
- 
+![Output](?raw=true)
+
  
  
  
