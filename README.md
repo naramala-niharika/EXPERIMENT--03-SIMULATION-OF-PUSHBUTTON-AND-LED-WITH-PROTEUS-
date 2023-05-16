@@ -71,111 +71,57 @@ We are now at the last part of step by step guide on how to simulate STM32 proje
 
 
 ## STM 32 CUBE PROGRAM :
-
-created by:Naramala Niharika
-reg no : 212221240031
-```
+~~~
+NAME:N.Niharika
+REG.NO:212221240031
+~~~
+~~~
 #include "main.h"
-
+#include "stdio.h"
+#include "stdbool.h"
+bool pushbutton;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-
 int main(void)
 {
-
-HAL_Init();
-SystemClock_Config();
-MX_GPIO_Init();
-
-while (1)
-  {
-	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
-	  HAL_Delay(500);
-	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
-	  HAL_Delay(500);
-  }
-  
-}
-
-void SystemClock_Config(void)
-{
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  
-  __HAL_RCC_PWR_CLK_ENABLE();
-  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
-  
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  
-   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
-  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
-
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
-  {
-    Error_Handler();
-  }
-}
-
-static void MX_GPIO_Init(void)
-{
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-  
-  __HAL_RCC_GPIOA_CLK_ENABLE();
-  
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
-  
-  GPIO_InitStruct.Pin = GPIO_PIN_5;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-}
-
-void Error_Handler(void)
-{
-   __disable_irq();
+  HAL_Init();
+  SystemClock_Config();
+  MX_GPIO_Init();
   while (1)
   {
+	  pushbutton = HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_4);
+	  	  if (pushbutton == 0)
+	  	    {
+	  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_SET);
+	  		  HAL_Delay(250);
+	  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_RESET);
+	  		  HAL_Delay(250);
+	  	    }
+	  	  else
+	  		{
+	  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_RESET);
+	  		  HAL_Delay(500);
+	  		}
   }
-  }
-
 }
+~~~
 
-#ifdef  USE_FULL_ASSERT
 
-void assert_failed(uint8_t *file, uint32_t line)
-{
 
-}
-#endif
-
-```
 ## Output screen shots of proteus  :
-
-<img width="533" alt="exp3-1" src="https://user-images.githubusercontent.com/94165377/234252019-cc6b38ff-018d-4b54-b3b0-145282071deb.png">
-
-
-<img width="478" alt="exp3-2" src="https://user-images.githubusercontent.com/94165377/234252026-1296342a-c7e6-4581-87dd-3d17b4186f96.png">
-
-
-
-## Proteus layout(Add pdf![Screenshot (9)](https://user-images.githubusercontent.com/94165377/234252269-9da8431d-d318-461c-acbb-cca114201697.png)
- screen shot of circuit here)
 
 
  
+## BUTTON OFF LED OFF CONDITION
+![image](https://user-images.githubusercontent.com/94226297/234239567-f9ea09c2-1075-4c0b-8e8c-025ac3a03c30.png)
+## BUTTON ON LED ON CONDITION
+![image](https://user-images.githubusercontent.com/94226297/234239664-b4dd501d-ea9f-49af-a612-0f6bfa686a61.png)
+
+## Proteus layout(Add pdf screen shot of circuit here)
+
+
+ ![image](https://user-images.githubusercontent.com/94226297/234240734-5b4a8669-e7ec-4e70-8ef1-85576500b9d2.png)
+
  
  
 ## Result :
